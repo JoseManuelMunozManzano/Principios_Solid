@@ -4,7 +4,8 @@ import './style.css';
 //import './clean-code/06-classes-a';
 //import './clean-code/06-classes-b';
 //import './clean-code/06-classes-b2';
-import './clean-code/06-classes-c';
+//import './clean-code/06-classes-c';
+import './clean-code/07-homework';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
