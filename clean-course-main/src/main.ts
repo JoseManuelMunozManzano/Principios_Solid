@@ -6,7 +6,8 @@ import './style.css';
 //import './clean-code/06-classes-b2';
 //import './clean-code/06-classes-c';
 // import './clean-code/07-homework';
-import './code-smells/02-high-coupling';
+// import './code-smells/02-high-coupling';
+import './code-smells/02-low-coupling';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
