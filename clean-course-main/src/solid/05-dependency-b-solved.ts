@@ -1,4 +1,4 @@
-import { JsonDataBaseService, LocalDataBaseService } from './05-dependency-c-solved';
+import { JsonDataBaseService, LocalDataBaseService, PostProvider } from './05-dependency-c-solved';
 
 export interface Post {
   body: string;
@@ -11,7 +11,8 @@ export class PostService {
   private posts: Post[] = [];
 
   // Inyección de dependencia
-  constructor(private postProvider: JsonDataBaseService) {}
+  // Aceptando ahora distintos tipos de proveedores.
+  constructor(private postProvider: PostProvider) {}
 
   async getPosts() {
     // Solucionado open-close

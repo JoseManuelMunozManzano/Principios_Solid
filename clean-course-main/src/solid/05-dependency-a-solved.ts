@@ -6,10 +6,12 @@ import { JsonDataBaseService, LocalDataBaseService } from './05-dependency-c-sol
   // Inyectando la dependencia al servicio.
   // Puedo inyectar LocalDataBaseService o JsonDataBaseService.
   //
-  // Pero para que funcione, PostService tiene que permitir los dos, y el tema de los tipos puede ser complicado.
-  // Para resolver el problema va a hacer falta el principio de inversión de dependencias.
-  // Tenemos que basar nuestro código en abstracciones en vez de implementaciones.
-  const provider = new LocalDataBaseService();
+  // Al hacer los cambios en los ficheros b y c ya funciona aquí sin tener que tocar nada más.
+  // Esto es porque se ha aplicado la inversión de dependencias y ahora además se puede aplicar Liskov.
+
+  //const provider = new LocalDataBaseService();
+  const provider = new JsonDataBaseService();
+
   const postService = new PostService(provider);
 
   const posts = await postService.getPosts();

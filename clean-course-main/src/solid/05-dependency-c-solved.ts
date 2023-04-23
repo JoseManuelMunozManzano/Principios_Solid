@@ -1,8 +1,14 @@
 import localPosts from '../data/local-database.json';
+import { Post } from './05-dependency-b-solved';
 
-// Esto es una implementación, no una abstracción
-export class LocalDataBaseService {
-  async getFakePosts() {
+// Creamos la abstracción
+export abstract class PostProvider {
+  abstract getPosts(): Promise<Post[]>;
+}
+
+// Implementamos la clase abstracta
+export class LocalDataBaseService implements PostProvider {
+  async getPosts() {
     return [
       {
         userId: 1,
@@ -20,16 +26,9 @@ export class LocalDataBaseService {
   }
 }
 
-// Nos creamos otro proveedor.
-// Esto es una implementación, no una abstracción
-// La idea es que el del backend nos da un JSON con data más o menos real para trabajar.
-//
-// Ahora vamos a usar JsonDataBaseService en vez de LocalDataBaseService y no debería ser ningún problema.
-// Se usa inyección de dependencias.
-export class JsonDataBaseService {
+// Implementamos la clase abstracta
+export class JsonDataBaseService implements PostProvider {
   async getPosts() {
     return localPosts;
   }
 }
-
-// FALTAN ABSTRACCIONES!!!!
