@@ -10,7 +10,8 @@ import './style.css';
 // import './code-smells/02-low-coupling';
 // import './solid/01-srp-solved';
 // import './solid/02-open-close-a-solved';
-import './solid/03-liskov-a-solved';
+// import './solid/03-liskov-a-solved';
+import './solid/05-dependency-a-solved';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
