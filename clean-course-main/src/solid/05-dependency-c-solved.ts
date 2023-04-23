@@ -32,3 +32,12 @@ export class JsonDataBaseService implements PostProvider {
     return localPosts;
   }
 }
+
+// Tarea
+// Nuevo provider. Solo haciendo esto e inyectando la dependencia debe de funcionar.
+export class WebApiPostService implements PostProvider {
+  async getPosts() {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
+    return await resp.json();
+  }
+}
