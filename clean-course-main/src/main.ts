@@ -8,7 +8,8 @@ import './style.css';
 // import './clean-code/07-homework';
 // import './code-smells/02-high-coupling';
 // import './code-smells/02-low-coupling';
-import './solid/01-srp-solved';
+// import './solid/01-srp-solved';
+import './solid/02-open-close-a-solved';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
